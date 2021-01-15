@@ -1,120 +1,107 @@
 <script>
 	import { onMount } from 'svelte';
-	import BarChart from './charts/BarChart.svelte'
-	import DotPlot from './charts/DotPlot.svelte'
-	import LineChart from './charts/LineChart.svelte'
 	import MapUSA from './charts/MapUSA.svelte'
-	import Scatter from './charts/Scatter.svelte'
-	import XYHeatmap from './charts/XYHeatmap.svelte'
 	import GraphicTitle from './components/GraphicTitle.svelte'
 	import GraphicFooter from './components/GraphicFooter.svelte'
+	import states  from './helpers/USStates.js'
+	import { join } from "./helpers/join.js";
 	import * as colors from './helpers/colors.js'
-	import * as turnout from '../public/datasets/turnout.json'
-	import * as applemaps from '../public/datasets/applemaps.json'
-	import * as cannabislaws from '../public/datasets/cannabislaws.json'
+	import * as data from '../public/datasets/data.json'
 
 	export let width = Math.min(
-		document.getElementById('interactive').getBoundingClientRect().width,
-		1000
+		(document.getElementById('interactive').getBoundingClientRect().width / 2) - 40
 	);
+	export let height = width * 0.3;
+
+	export let newdata = [];
 
 	// export let height = Math.min(
 	// 	document.getElementById('interactive').getBoundingClientRect().height,
 	// 	1000
 	// );
-	export let height = 350;
+
+	onMount(function() {
+		newdata = join(states, data.default, "abbreviation", "State", function(second, first) {
+				second["Full Name"] = first["name"]
+				return second;
+			}) //join
+	}) // onMount
 </script>
 
 <style>
 
+	#maps {
+		display:grid;
+		grid-template-columns: repeat(2, 1fr);
+		column-gap: 20px;
+		grid-template-rows: repeat(2, 1fr);
+		row-gap:30px;
+	}
 </style>
 
-<GraphicTitle
-	title={"2020 vs. 2016 Votes"}
-/>
-<BarChart
-	data={turnout.default.filter(d => (["Massachusetts", "Rhode Island", "Connecticut", "New Hampshire", "Maine", "Vermont"].indexOf(d["State"]) > -1))}
-	width={width}
-	height={height}
-	xVar={"State"}
-	yVar={["2020 Early Votes", "2016 Total Votes"]}
-	yDomain={[0, 3500000]}
-/>
-<hr />
+
+{#if newdata.length > 0}
+<h3>Percent of respondents in each state who said, in the past week, that they "very closely" followed recommendations to...</h3>
+<div id="maps">
+	<div class="a-map">
+		<GraphicTitle
+			title={"...avoid contact with other people"}
+		/>
+		<MapUSA
+			data={newdata}
+			width = {width}
+			height = {height * 2}
+			variable={"Avoiding contact with other people"}
+			maptype={"geo"}
+			colorscheme={colors.linearpurple}
+		/>
+	</div>
+	<div class="a-map">
+		<GraphicTitle
+			title={"...avoid public or crowded places"}
+		/>
+		<MapUSA
+			data={newdata}
+			width = {width}
+			height = {height * 2}
+			variable={"Avoiding public or crowded places"}
+			maptype={"geo"}
+			colorscheme={colors.linearpurple}
+		/>
+	</div>
+	<div class="a-map">
+		<GraphicTitle
+			title={"...frequently wash hands"}
+		/>
+		<MapUSA
+			data={newdata}
+			width = {width}
+			height = {height * 2}
+			variable={"Frequently washing hands"}
+			maptype={"geo"}
+			colorscheme={colors.linearpurple}
+		/>
+	</div>
+	<div class="a-map">
+		<GraphicTitle
+			title={"...wear a face mask when outside of the home"}
+		/>
+		<MapUSA
+			data={newdata}
+			width = {width}
+			height = {height * 2}
+			variable={"Wearing a face mask when outside of your home"}
+			maptype={"geo"}
+			colorscheme={colors.linearpurple}
+		/>
+	</div>
+</div>
+{/if}
 
 
-<GraphicTitle
-	title={"2020 vs. 2016 Votes"}
-/>
-<DotPlot
-	data={turnout.default.filter(d => (["Massachusetts", "Rhode Island", "Connecticut", "New Hampshire", "Maine", "Vermont"].indexOf(d["State"]) > -1))}
-	width = {width}
-	height = {height}
-	groupings={["2020 Early Votes", "2016 Total Votes"]}
-	category={"State"}
-/>
-<hr />
-
-
-<GraphicTitle
-	title={"Transportation mode usage changes in March 2020"}
-/>
-<LineChart
-	data={applemaps.default}
-	width = {width}
-	height = {height}
-	xVar={"date"}
-	yGroups={["driving", "transit", "walking"]}
-	yDomain={[0, 200]}
-/>
-<hr />
-
-
-
-<GraphicTitle
-	title={"Cannabis laws by state"}
-/>
-<MapUSA
-	data={cannabislaws.default}
-	width = {width}
-	height = {height * 2}
-	variable={"combined"}
-	maptype={"geo"}
-/>
-<hr />
-
-
-
-<GraphicTitle
-	title={"Transportation mode usage changes in March 2020"}
-/>
-<Scatter
-	data={turnout.default}
-	width = {width/2}
-	height = {width/2}
-	xVar={"2020 Early Votes"}
-	yVar={"2016 Total Votes"}
-/>
-<hr />
-
-
-
-<GraphicTitle
-	title={"2020 Vs. 2016 Votes"}
-/>
-<XYHeatmap
-	data={applemaps.default}
-	width = {width}
-	height = {height}
-	xVar={"date"}
-	yGroups={["driving", "transit", "walking"]}
-	yDomain={[0, 200]}
-/>
-<hr />
 
 
 <GraphicFooter
-	source={'<a href="https://electproject.github.io/Early-Vote-2020G/index.html">United States Elections Project</a>'}
-	note={'Accessed Nov 2020'}
-	credit={'Developer Credit/Northeastern University'}
+	source={'<a href="https://covidstates.org/">The COVID-19 Consortium for Understanding the Public’s Policy Preferences Across States</a>'}
+	credit={'Tyler Machado/Northeastern University'}
 />

@@ -1,9 +1,10 @@
 <script>
 	import { onMount } from 'svelte';
-	import { scaleLinear, scaleLog, scaleOrdinal } from 'd3-scale';
+	import { extent } from 'd3-array'
+	import { scaleLinear, scaleLog, scaleOrdinal, scaleThreshold } from 'd3-scale';
 	import { axisLeft, axisRight, axisTop, axisBottom } from 'd3-axis';
 	import { geoAlbersUsa, geoMercator, geoPath } from 'd3-geo';
-	import { legendColor } from 'd3-svg-legend';
+	import { legendColor, legendHelpers } from 'd3-svg-legend';
 	import { select, selectAll } from 'd3-selection';
 	import { format } from 'd3-format'
 	import { transition } from 'd3-transition'
@@ -12,6 +13,7 @@
 	import statehex from "../helpers/USStateHexbin.js";
 
 	let d3 = {
+		extent: extent,
 		scaleLinear: scaleLinear,
 		scaleOrdinal: scaleOrdinal,
 		scaleLog: scaleLog,
@@ -25,6 +27,7 @@
 		geoMercator: geoMercator,
 		geoPath: geoPath,
 		legendColor: legendColor,
+		legendHelpers: legendHelpers,
 		format: format
 	}
 
@@ -39,11 +42,6 @@
 
 	let geojson;
 	let projection;
-
-	console.log(
-		data.map(d => d[variable])
-	)
-
 
 	if (maptype === "hex") {
 		geojson = statehex;
@@ -62,9 +60,11 @@
 		.domain([250, 1000])
 		.range([7, 12])
 
-	let colorScale = d3.scaleOrdinal()
-		.domain(data.map(d => d[variable]))
+	let colorScale = d3.scaleLinear()
+		.domain([25,100])
 		.range(colorscheme)
+
+
 
 
 	const padding = { top: 10, right: 40, bottom: 40, left: 50 };
@@ -75,6 +75,7 @@
 	onMount(generateMap);
 
 	function generateMap() {
+		colorScale.domain(d3.extent(Object.values(data.map(d => parseFloat(d[variable]))))).nice()
 
 		let svg = d3.select(el).append("svg");
 
@@ -90,10 +91,10 @@
 			.attr("class", "state")
           .attr("fill", function(d){
 				 let result = data.filter(obj => {
-					 return obj.state === d.properties.name
+					 return obj["Full Name"] === d.properties.name
 				 })[0]
 				 if (result) {
-					return colorScale(result[variable])
+					return colorScale(parseFloat(result[variable]))
 				 } else {
 				 	return "gray"
 				 }
@@ -103,20 +104,21 @@
 			 .attr("stroke-width", width/1200)
 			 .on("mouseover mousemove", function(event, d) {
 				 let result = data.filter(obj => {
-					 return obj.state === d.properties.name
+					 return obj["Full Name"] === d.properties.name
 				 })[0]
 				 if (result) {
-					 d3.select(".tooltip .line1").text(d.properties.name)
-					 d3.select(".tooltip .line2").text(variable + ": " + result[variable])
+					 let centroid = path.centroid(d);
+					 tooltip.select(".line1").text(d.properties.name)
+					 tooltip.select(".line2").text(variable + ": " + parseFloat(result[variable]) + "%")
 
-					 d3.select(".tooltip")
+					 tooltip
 					 	.style("visibility", "unset")
-						.style("left", (event.pageX-100) + "px")
-						.style("top", (event.pageY-80) + "px")
+						.style("left", (centroid[0]-100) + "px")
+						.style("top", (centroid[1]-100) + "px")
 
 				 }
 			 }).on("mouseleave", function(d) {
-				 d3.select(".tooltip")
+				 tooltip
 					.style("visibility", "hidden")
 			 })
 
@@ -157,15 +159,24 @@
 
 		const legend = d3.legendColor()
 			.scale(colorScale)
-			.cells([0,0.25,0.5,0.75,1])
-			.labelFormat(d3.format(".0%"))
+			.cells(5)
 			.orient("horizontal")
-			.shapeWidth((width-25)/5)
+			.shapeWidth((width)/5)
+			.shapeHeight(Math.min(15, width*0.07))
 			.shapePadding(0)
-			.labelWrap(130)
+			.labelWrap(width)
+			// .labels(["lower %","","","","higher %"])
+			.labels(function(d,i){
+				console.log(d.generatedLabels);
+				for (let j=0; j<d.generatedLabels.length; j++) {
+					d.generatedLabels[j] = (parseFloat(d.generatedLabels[j]) + "%")
+				}
+				return d.generatedLabels[d.i]
+			})
+			// .labels(d3.legendHelpers.thresholdLabels)
 
 		const legendContainer = d3.select(el).append("svg")
-			.attr("width", width-25)
+			.attr("width", width)
 			.attr("class","legendContainer")
 			.attr("height", 40)
 			.append("g")
@@ -209,19 +220,25 @@
 		text-align:center;
 		position:absolute;
 		visibility:hidden;
+		z-index:10;
 		width:200px;
-		height:60px;
+		height:75px;
+		top:0px;
+		left:0px;
 	}
 
 	:global(div.tooltip .line1) {
 		display:block;
 		font-weight:bold;
 		font-size:1.1rem;
+		margin:0;
 	}
 
 	:global(div.tooltip .line2) {
 		display:block;
 		font-size:0.9rem;
+		line-height: 1.1;
+		margin:0;
 	}
 
 	.chart :global(circle)  {
@@ -232,6 +249,12 @@
 		text-transform: uppercase;
 		fill: #666;
 		font-size:11px;
+	}
+
+	@media screen and (max-width:600px) {
+		:global(svg g text.label) {
+			transform: scale(0.8);
+		}
 	}
 </style>
 

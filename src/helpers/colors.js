@@ -9,6 +9,18 @@ export const vibrant = [
 ]
 
 export const pastels = [
+   '#8fbfe8',
+   '#eb7a58',
+   '#b1d9c6',
+   '#395772',
+   '#b07aa1',
+   '#f28e2b',
+   '#e8c83c',
+   '#7099ff',
+
+]
+
+export const pastels2 = [
    '#74c28c',
    '#e8c83c',
    '#7099ff',

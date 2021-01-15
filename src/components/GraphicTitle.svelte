@@ -8,9 +8,10 @@
 <style>
    span.graphictitle {
       font-family:'akkurat','Helvetica','Arial',sans-serif;
-      font-size:1.75rem;
+      font-size:1rem;
       font-weight:900;
       display:block;
+      height:4rem;
    }
 </style>
 

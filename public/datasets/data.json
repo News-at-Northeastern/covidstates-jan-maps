@@ -1,0 +1,359 @@
+[
+  {
+    "State": "AK",
+    "Avoiding contact with other people": "44 (6)",
+    "Avoiding public or crowded places": "49 (6)",
+    "Frequently washing hands": "65 (6)",
+    "Wearing a face mask when outside of your home": "71 (5)"
+  },
+  {
+    "State": "AL",
+    "Avoiding contact with other people": "50 (6)",
+    "Avoiding public or crowded places": "54 (6)",
+    "Frequently washing hands": "75 (5)",
+    "Wearing a face mask when outside of your home": "81 (4)"
+  },
+  {
+    "State": "AR",
+    "Avoiding contact with other people": "46 (6)",
+    "Avoiding public or crowded places": "52 (6)",
+    "Frequently washing hands": "69 (5)",
+    "Wearing a face mask when outside of your home": "73 (5)"
+  },
+  {
+    "State": "AZ",
+    "Avoiding contact with other people": "50 (5)",
+    "Avoiding public or crowded places": "57 (5)",
+    "Frequently washing hands": "72 (5)",
+    "Wearing a face mask when outside of your home": "78 (4)"
+  },
+  {
+    "State": "CA",
+    "Avoiding contact with other people": "58 (5)",
+    "Avoiding public or crowded places": "67 (5)",
+    "Frequently washing hands": "75 (4)",
+    "Wearing a face mask when outside of your home": "86 (3)"
+  },
+  {
+    "State": "CO",
+    "Avoiding contact with other people": "51 (5)",
+    "Avoiding public or crowded places": "59 (5)",
+    "Frequently washing hands": "73 (5)",
+    "Wearing a face mask when outside of your home": "83 (4)"
+  },
+  {
+    "State": "CT",
+    "Avoiding contact with other people": "56 (5)",
+    "Avoiding public or crowded places": "63 (5)",
+    "Frequently washing hands": "76 (4)",
+    "Wearing a face mask when outside of your home": "85 (4)"
+  },
+  {
+    "State": "DC",
+    "Avoiding contact with other people": "68 (5)",
+    "Avoiding public or crowded places": "74 (5)",
+    "Frequently washing hands": "80 (4)",
+    "Wearing a face mask when outside of your home": "92 (3)"
+  },
+  {
+    "State": "DE",
+    "Avoiding contact with other people": "52 (5)",
+    "Avoiding public or crowded places": "62 (5)",
+    "Frequently washing hands": "71 (5)",
+    "Wearing a face mask when outside of your home": "88 (3)"
+  },
+  {
+    "State": "FL",
+    "Avoiding contact with other people": "51 (5)",
+    "Avoiding public or crowded places": "58 (5)",
+    "Frequently washing hands": "71 (4)",
+    "Wearing a face mask when outside of your home": "80 (4)"
+  },
+  {
+    "State": "GA",
+    "Avoiding contact with other people": "51 (5)",
+    "Avoiding public or crowded places": "56 (5)",
+    "Frequently washing hands": "74 (5)",
+    "Wearing a face mask when outside of your home": "72 (5)"
+  },
+  {
+    "State": "HI",
+    "Avoiding contact with other people": "51 (5)",
+    "Avoiding public or crowded places": "57 (5)",
+    "Frequently washing hands": "75 (5)",
+    "Wearing a face mask when outside of your home": "86 (4)"
+  },
+  {
+    "State": "IA",
+    "Avoiding contact with other people": "44 (5)",
+    "Avoiding public or crowded places": "53 (5)",
+    "Frequently washing hands": "68 (5)",
+    "Wearing a face mask when outside of your home": "77 (4)"
+  },
+  {
+    "State": "ID",
+    "Avoiding contact with other people": "36 (5)",
+    "Avoiding public or crowded places": "48 (5)",
+    "Frequently washing hands": "60 (5)",
+    "Wearing a face mask when outside of your home": "67 (5)"
+  },
+  {
+    "State": "IL",
+    "Avoiding contact with other people": "55 (5)",
+    "Avoiding public or crowded places": "63 (5)",
+    "Frequently washing hands": "72 (5)",
+    "Wearing a face mask when outside of your home": "82 (4)"
+  },
+  {
+    "State": "IN",
+    "Avoiding contact with other people": "46 (5)",
+    "Avoiding public or crowded places": "55 (5)",
+    "Frequently washing hands": "71 (5)",
+    "Wearing a face mask when outside of your home": "76 (4)"
+  },
+  {
+    "State": "KS",
+    "Avoiding contact with other people": "45 (5)",
+    "Avoiding public or crowded places": "54 (5)",
+    "Frequently washing hands": "68 (5)",
+    "Wearing a face mask when outside of your home": "73 (4)"
+  },
+  {
+    "State": "KY",
+    "Avoiding contact with other people": "54 (5)",
+    "Avoiding public or crowded places": "61 (5)",
+    "Frequently washing hands": "72 (5)",
+    "Wearing a face mask when outside of your home": "82 (4)"
+  },
+  {
+    "State": "LA",
+    "Avoiding contact with other people": "49 (5)",
+    "Avoiding public or crowded places": "57 (5)",
+    "Frequently washing hands": "72 (5)",
+    "Wearing a face mask when outside of your home": "73 (5)"
+  },
+  {
+    "State": "MA",
+    "Avoiding contact with other people": "58 (5)",
+    "Avoiding public or crowded places": "66 (5)",
+    "Frequently washing hands": "72 (4)",
+    "Wearing a face mask when outside of your home": "85 (3)"
+  },
+  {
+    "State": "MD",
+    "Avoiding contact with other people": "58 (5)",
+    "Avoiding public or crowded places": "66 (5)",
+    "Frequently washing hands": "76 (4)",
+    "Wearing a face mask when outside of your home": "86 (3)"
+  },
+  {
+    "State": "ME",
+    "Avoiding contact with other people": "53 (5)",
+    "Avoiding public or crowded places": "59 (5)",
+    "Frequently washing hands": "69 (4)",
+    "Wearing a face mask when outside of your home": "81 (4)"
+  },
+  {
+    "State": "MI",
+    "Avoiding contact with other people": "53 (5)",
+    "Avoiding public or crowded places": "57 (5)",
+    "Frequently washing hands": "67 (5)",
+    "Wearing a face mask when outside of your home": "76 (4)"
+  },
+  {
+    "State": "MN",
+    "Avoiding contact with other people": "48 (5)",
+    "Avoiding public or crowded places": "62 (5)",
+    "Frequently washing hands": "68 (4)",
+    "Wearing a face mask when outside of your home": "79 (4)"
+  },
+  {
+    "State": "MO",
+    "Avoiding contact with other people": "49 (5)",
+    "Avoiding public or crowded places": "57 (5)",
+    "Frequently washing hands": "74 (4)",
+    "Wearing a face mask when outside of your home": "75 (4)"
+  },
+  {
+    "State": "MS",
+    "Avoiding contact with other people": "44 (6)",
+    "Avoiding public or crowded places": "52 (6)",
+    "Frequently washing hands": "76 (5)",
+    "Wearing a face mask when outside of your home": "77 (5)"
+  },
+  {
+    "State": "MT",
+    "Avoiding contact with other people": "34 (5)",
+    "Avoiding public or crowded places": "46 (5)",
+    "Frequently washing hands": "63 (5)",
+    "Wearing a face mask when outside of your home": "72 (5)"
+  },
+  {
+    "State": "NC",
+    "Avoiding contact with other people": "51 (5)",
+    "Avoiding public or crowded places": "56 (5)",
+    "Frequently washing hands": "72 (4)",
+    "Wearing a face mask when outside of your home": "76 (4)"
+  },
+  {
+    "State": "ND",
+    "Avoiding contact with other people": "35 (5)",
+    "Avoiding public or crowded places": "45 (5)",
+    "Frequently washing hands": "61 (5)",
+    "Wearing a face mask when outside of your home": "71 (5)"
+  },
+  {
+    "State": "NE",
+    "Avoiding contact with other people": "43 (5)",
+    "Avoiding public or crowded places": "51 (5)",
+    "Frequently washing hands": "69 (5)",
+    "Wearing a face mask when outside of your home": "76 (4)"
+  },
+  {
+    "State": "NH",
+    "Avoiding contact with other people": "53 (5)",
+    "Avoiding public or crowded places": "65 (4)",
+    "Frequently washing hands": "71 (4)",
+    "Wearing a face mask when outside of your home": "84 (3)"
+  },
+  {
+    "State": "NJ",
+    "Avoiding contact with other people": "58 (5)",
+    "Avoiding public or crowded places": "66 (5)",
+    "Frequently washing hands": "71 (5)",
+    "Wearing a face mask when outside of your home": "84 (4)"
+  },
+  {
+    "State": "NM",
+    "Avoiding contact with other people": "57 (6)",
+    "Avoiding public or crowded places": "62 (6)",
+    "Frequently washing hands": "75 (5)",
+    "Wearing a face mask when outside of your home": "81 (5)"
+  },
+  {
+    "State": "NV",
+    "Avoiding contact with other people": "54 (5)",
+    "Avoiding public or crowded places": "63 (5)",
+    "Frequently washing hands": "75 (5)",
+    "Wearing a face mask when outside of your home": "84 (4)"
+  },
+  {
+    "State": "NY",
+    "Avoiding contact with other people": "58 (5)",
+    "Avoiding public or crowded places": "66 (5)",
+    "Frequently washing hands": "75 (4)",
+    "Wearing a face mask when outside of your home": "86 (3)"
+  },
+  {
+    "State": "OH",
+    "Avoiding contact with other people": "51 (5)",
+    "Avoiding public or crowded places": "56 (5)",
+    "Frequently washing hands": "68 (5)",
+    "Wearing a face mask when outside of your home": "77 (4)"
+  },
+  {
+    "State": "OK",
+    "Avoiding contact with other people": "47 (5)",
+    "Avoiding public or crowded places": "52 (5)",
+    "Frequently washing hands": "70 (5)",
+    "Wearing a face mask when outside of your home": "70 (5)"
+  },
+  {
+    "State": "OR",
+    "Avoiding contact with other people": "52 (5)",
+    "Avoiding public or crowded places": "60 (5)",
+    "Frequently washing hands": "66 (4)",
+    "Wearing a face mask when outside of your home": "81 (4)"
+  },
+  {
+    "State": "PA",
+    "Avoiding contact with other people": "56 (5)",
+    "Avoiding public or crowded places": "62 (5)",
+    "Frequently washing hands": "72 (4)",
+    "Wearing a face mask when outside of your home": "79 (4)"
+  },
+  {
+    "State": "RI",
+    "Avoiding contact with other people": "57 (5)",
+    "Avoiding public or crowded places": "65 (5)",
+    "Frequently washing hands": "76 (4)",
+    "Wearing a face mask when outside of your home": "89 (3)"
+  },
+  {
+    "State": "SC",
+    "Avoiding contact with other people": "49 (5)",
+    "Avoiding public or crowded places": "57 (5)",
+    "Frequently washing hands": "69 (5)",
+    "Wearing a face mask when outside of your home": "77 (5)"
+  },
+  {
+    "State": "SD",
+    "Avoiding contact with other people": "36 (5)",
+    "Avoiding public or crowded places": "43 (5)",
+    "Frequently washing hands": "60 (5)",
+    "Wearing a face mask when outside of your home": "61 (5)"
+  },
+  {
+    "State": "TN",
+    "Avoiding contact with other people": "50 (5)",
+    "Avoiding public or crowded places": "61 (5)",
+    "Frequently washing hands": "72 (4)",
+    "Wearing a face mask when outside of your home": "76 (4)"
+  },
+  {
+    "State": "TX",
+    "Avoiding contact with other people": "53 (5)",
+    "Avoiding public or crowded places": "58 (5)",
+    "Frequently washing hands": "75 (4)",
+    "Wearing a face mask when outside of your home": "81 (4)"
+  },
+  {
+    "State": "UT",
+    "Avoiding contact with other people": "43 (5)",
+    "Avoiding public or crowded places": "51 (5)",
+    "Frequently washing hands": "68 (4)",
+    "Wearing a face mask when outside of your home": "77 (4)"
+  },
+  {
+    "State": "VA",
+    "Avoiding contact with other people": "56 (5)",
+    "Avoiding public or crowded places": "59 (5)",
+    "Frequently washing hands": "74 (5)",
+    "Wearing a face mask when outside of your home": "79 (4)"
+  },
+  {
+    "State": "VT",
+    "Avoiding contact with other people": "52 (6)",
+    "Avoiding public or crowded places": "61 (6)",
+    "Frequently washing hands": "58 (6)",
+    "Wearing a face mask when outside of your home": "81 (5)"
+  },
+  {
+    "State": "WA",
+    "Avoiding contact with other people": "54 (5)",
+    "Avoiding public or crowded places": "56 (5)",
+    "Frequently washing hands": "69 (4)",
+    "Wearing a face mask when outside of your home": "79 (4)"
+  },
+  {
+    "State": "WI",
+    "Avoiding contact with other people": "50 (5)",
+    "Avoiding public or crowded places": "55 (5)",
+    "Frequently washing hands": "66 (5)",
+    "Wearing a face mask when outside of your home": "73 (4)"
+  },
+  {
+    "State": "WV",
+    "Avoiding contact with other people": "52 (6)",
+    "Avoiding public or crowded places": "59 (5)",
+    "Frequently washing hands": "73 (5)",
+    "Wearing a face mask when outside of your home": "81 (4)"
+  },
+  {
+    "State": "WY",
+    "Avoiding contact with other people": "37 (6)",
+    "Avoiding public or crowded places": "43 (6)",
+    "Frequently washing hands": "60 (6)",
+    "Wearing a face mask when outside of your home": "64 (6)"
+  }
+]
